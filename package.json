@@ -12,7 +12,17 @@
   "license": "MIT",
   "packageManager": "pnpm@9.14.2",
   "devDependencies": {
+    "@eslint/js": "9.15.0",
     "@s-ui/mono": "2.45.0",
-    "turbo": "2.3.3"
+    "eslint": "9.15.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-standard": "5.0.0",
+    "globals": "15.12.0",
+    "prettier": "3.4.1",
+    "turbo": "2.3.3",
+    "typescript-eslint": "8.16.0"
+  },
+  "dependencies": {
+    "rm": "^0.1.8"
   }
 }
