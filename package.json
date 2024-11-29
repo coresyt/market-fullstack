@@ -3,7 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "commit": "sui-mono commit"
+    "lint": "eslint . && prettier . --write",
+    "fix": "eslint . --fix && prettier . --check",
+    "commit": "sui-mono commit",
+    "turbo": "turbo run"
   },
   "author": {
     "name": "coresyt",
@@ -23,6 +26,7 @@
     "typescript-eslint": "8.16.0"
   },
   "dependencies": {
-    "rm": "^0.1.8"
+    "rm": "^0.1.8",
+    "typescript": "5.7.2"
   }
 }
