@@ -1,0 +1,18 @@
+{
+  "name": "market-fullstack",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "commit": "sui-mono commit"
+  },
+  "author": {
+    "name": "coresyt",
+    "url": "https://github.com/coresyt"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@9.14.2",
+  "devDependencies": {
+    "@s-ui/mono": "2.45.0",
+    "turbo": "2.3.3"
+  }
+}
