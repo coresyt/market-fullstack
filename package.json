@@ -8,6 +8,9 @@
     "commit": "sui-mono commit",
     "turbo": "turbo run"
   },
+  "workspaces": [
+    "./apps/**"
+  ],
   "author": {
     "name": "coresyt",
     "url": "https://github.com/coresyt"
