@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import getEnvs from './env'
+import morgan from 'morgan'
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.set('mongo_db', getEnvs.MONGO.DB)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(morgan('dev'))
 app.use(
   cors({
     allowedHeaders: ['Authorization'],
