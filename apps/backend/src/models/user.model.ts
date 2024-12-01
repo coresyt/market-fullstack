@@ -18,6 +18,9 @@ const userModel = new Schema(
       },
     },
     methods: {
+      isAdmin: async function () {
+        return this.role === 'admin' ? true : false
+      },
       comparePassword: async function (password: string) {
         return await bcrypt.compare(password, this.password)
       },

@@ -4,6 +4,7 @@ import getEnvs from './env'
 import morgan from 'morgan'
 
 import productsRouter from './routes/products.routes'
+import authRouter from './routes/users.routes'
 const app = express()
 
 app.set('port', getEnvs.PORT)
@@ -24,5 +25,6 @@ app.use(
 )
 
 app.use('/api/products', productsRouter)
+app.use('/api/auth', authRouter)
 
 export default app
