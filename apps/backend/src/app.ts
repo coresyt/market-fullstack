@@ -3,6 +3,7 @@ import cors from 'cors'
 import getEnvs from './env'
 import morgan from 'morgan'
 
+import productsRouter from './routes/products.routes'
 const app = express()
 
 app.set('port', getEnvs.PORT)
@@ -21,5 +22,7 @@ app.use(
     origin: app.get('cors_uri'),
   }),
 )
+
+app.use('/api/products', productsRouter)
 
 export default app

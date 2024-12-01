@@ -6,7 +6,7 @@ const productModel = new Schema(
     displayName: { type: String, required: true, unique: true },
     description: String,
     count: { type: Number, required: true },
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
   },
   { timestamps: true, versionKey: false },
 )

@@ -2,8 +2,8 @@ import { connect } from 'mongoose'
 
 export default async function connectDB({
   uri,
-  // user,
-  // pass,
+  user,
+  pass,
   db,
 }: {
   uri: string
@@ -12,12 +12,9 @@ export default async function connectDB({
   db: string
 }) {
   const uri_connection = uri
-    // .replace('<user>', user)
-    // .replace('<pass>', pass)
+    .replace('<user>', user)
+    .replace('<pass>', pass)
     .replace('<db>', db)
-    .replace('<user>:<pass>@', '')
-
-  console.log(uri_connection)
 
   const { connection } = await connect(uri_connection)
   const { readyState } = connection
