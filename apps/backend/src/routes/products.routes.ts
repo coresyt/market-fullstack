@@ -1,16 +1,17 @@
 import * as controller from '../controllers/products.controller'
 import { Router } from 'express'
+import { middlewareAdmin, middlewareUser } from '../middlewares/auth.mw'
 
 const productsRouter = Router()
 
-productsRouter.get('/', controller.getAllProducts)
+productsRouter.get('/', middlewareUser, controller.getAllProducts)
 
-productsRouter.post('/', controller.createProduct)
+productsRouter.post('/', middlewareAdmin, controller.createProduct)
 
-productsRouter.get('/:product', controller.getProduct)
+productsRouter.get('/:product', middlewareUser, controller.getProduct)
 
-productsRouter.post('/:product', controller.updateProduct)
+productsRouter.post('/:product', middlewareAdmin, controller.updateProduct)
 
-productsRouter.delete('/:product', controller.deleteProduct)
+productsRouter.delete('/:product', middlewareAdmin, controller.deleteProduct)
 
 export default productsRouter

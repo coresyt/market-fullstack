@@ -2,8 +2,8 @@ import { Schema, model } from 'mongoose'
 
 const productModel = new Schema(
   {
-    name: { type: String, required: true },
-    displayName: { type: String, required: true, unique: true },
+    name: { type: String, required: true, unique: true },
+    displayName: { type: String, required: true },
     description: String,
     count: { type: Number, required: true },
     date: { type: String, required: true },

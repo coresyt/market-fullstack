@@ -1,4 +1,4 @@
-import Product from '../models/Product.model'
+import Product from '../models/product.model'
 import type { Request, Response } from 'express'
 
 type Router = (req: Request, res: Response) => void
@@ -19,16 +19,13 @@ export const createProduct: Router = async (req, res) => {
       !req.body.description
     )
       return res.status(400).json({
-        status: 400,
         message:
           'Is bad request because not exist "name", "displayName", "date", "count", "count", or "description "',
       })
 
     const product = new Product(req.body)
     await product.save()
-    return res
-      .status(201)
-      .json({ status: 201, message: 'Create product successfully' })
+    return res.status(201).json({ message: 'Create product successfully' })
   } catch (err) {
     console.log(err)
     return res.status(400).json()
@@ -39,8 +36,7 @@ export const getProduct: Router = async (req, res) => {
   try {
     const product = await Product.findById(req.params.product)
 
-    if (!product)
-      return res.status(404).json({ status: 404, message: 'Product not found' })
+    if (!product) return res.status(404).json({ message: 'Product not found' })
 
     return res.json(product)
   } catch (err) {
@@ -52,7 +48,7 @@ export const getProduct: Router = async (req, res) => {
 export const updateProduct: Router = async (req, res) => {
   try {
     await Product.findByIdAndUpdate(req.params.product, req.body)
-    return res.json({ status: 200, message: 'Updating product successfully' })
+    return res.json({ message: 'Updating product successfully' })
   } catch (err) {
     console.log(err)
     return res.status(400).json()
@@ -62,7 +58,7 @@ export const updateProduct: Router = async (req, res) => {
 export const deleteProduct: Router = async (req, res) => {
   try {
     await Product.findByIdAndDelete(req.params.product)
-    return res.json({ status: 200, message: 'Delete product successfully' })
+    return res.json({ message: 'Delete product successfully' })
   } catch (err) {
     console.log(err)
     return res.status(400).json()
